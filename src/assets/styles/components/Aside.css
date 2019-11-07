@@ -1,0 +1,11 @@
+.aside{
+    position: fixed;
+    width: 350px;
+    background: #171929;
+    color: #fff;
+    height: 100%;
+}
+
+.aside img{
+    width: 100%;
+}
