@@ -1,0 +1,31 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 10px;
+}
+
+.header__search{
+    border: none;
+    border-radius: 8px;
+    background: #f0f0f0;
+    height: 50px;
+    padding: 0px 18px;
+    box-shadow: 0 0 10px #f0f0f0;
+}
+
+.header__container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header__container__image{
+    width: 50px;
+    margin: 0px 5px;
+}
+
+.header__container__image img{
+    width: 100%;
+    border-radius: 50%;
+    border: 1px solid grey;
+}
