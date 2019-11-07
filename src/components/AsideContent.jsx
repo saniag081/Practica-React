@@ -3,17 +3,17 @@ import React from 'react';
 const AsideContent = props => {
     const { title, list, children} = props;
     return(
-        <>
+        <div>
             <h2>{title}</h2>
             {list ?
-                <ul>
+                <ol>
                     { children }
-                </ul>:
+                </ol>:
                 <>
                     {children}
                 </>
             }
-        </>
+        </div>
     )
 }
 

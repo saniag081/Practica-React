@@ -6,10 +6,10 @@ const AsideItems = props => {
         <>
             {list ?
                 <li>programing</li>:
-                <>
+                <div>
                     <img src="" alt=""/>
                     <p>ejemplo user</p>
-                </>
+                </div>
             }
         </>
     )

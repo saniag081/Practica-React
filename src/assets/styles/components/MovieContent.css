@@ -1,0 +1,8 @@
+.content__list{
+    margin-left: 350px;
+}
+
+.content__list__box{
+    display: flex;
+    overflow: scroll;
+}
