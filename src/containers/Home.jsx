@@ -35,6 +35,11 @@ const Home = () =>{
         error: null,
     })
 
+    const [listFriends,setListFriends] = useState({
+        loading: true,
+        data: {},
+    })
+
     useEffect(()=>{
         const baseAPI = 'https://yts.lt/api/v2/list_movies.json?genre=';
 
@@ -46,6 +51,7 @@ const Home = () =>{
                         movies: data.data.movies
                     },
                     loading: false,
+                    error: null
                 }))
                 .catch( err => setState(err));
         }
@@ -54,9 +60,22 @@ const Home = () =>{
         requestApiMovies(baseAPI,'drama',setPeliculasDrama);
         requestApiMovies(baseAPI,'animation', setPeliculasAnimation);
 
-
     }, [])
-    
+
+    useEffect(() => {
+        const API = 'https://uinames.com/api/?ext&amount=25';
+
+        function requestFriend(api){
+            fetch(api)
+                .then(response => response.json())
+                .then(data => setListFriends({
+                    data: data,
+                    loading: false
+                }));
+        }
+        requestFriend(API);            
+    }, [])
+        
     return(
         <>
             <Aside>
@@ -69,14 +88,16 @@ const Home = () =>{
 
                 </AsideContent>
 
-                <AsideContent title="Playlist de amigos">
-                    <AsideItems/>
-                    <AsideItems/>
-                    <AsideItems/>
-                    <AsideItems/>
-                    <AsideItems/>
-                    <AsideItems/>
-                </AsideContent>
+                {!listFriends.loading &&
+                    <AsideContent title="Playlist de amigos">
+                        {listFriends.data.map( item => 
+                            <AsideItems
+                                key={item.email}
+                                {...item}
+                            />
+                        )}
+                    </AsideContent>
+                }
             </Aside>
 
             <Header />
@@ -93,7 +114,7 @@ const Home = () =>{
                             {...item}
                             loading={peliculasAction.loading}
                         />
-                    )}
+                        )}
                 </MovieContent>
             }
 

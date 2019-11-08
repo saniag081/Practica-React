@@ -1,5 +1,4 @@
 import React from 'react';
-import logoEjem from '../assets/static/logo.svg';
 
 const MovieItems = props => {
     const { id, title, medium_cover_image} = props;

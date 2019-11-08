@@ -1,0 +1,9 @@
+.aside__friend__item{
+    display: flex;
+    margin: 15px 0;
+}
+
+.aside__friend__item img{
+    width: 50px;
+    margin-right: 8px;
+}
