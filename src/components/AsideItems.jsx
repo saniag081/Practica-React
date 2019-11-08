@@ -2,7 +2,7 @@ import React from 'react';
 import '../assets/styles/components/AsideItems.css';
 
 const AsideItems = props => {
-    const { list, name, photo, email } = props
+    const { list, name, photo } = props
     return(
         <>
             {list ?
