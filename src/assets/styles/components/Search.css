@@ -1,0 +1,25 @@
+.search{
+    z-index: 1;
+    position: fixed;
+    left: 350px;
+    bottom: 0;
+    right: 0;
+    height: 190px;
+    background: linear-gradient(to right, #ff0000, #ff458b);
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.search img{
+    width: 100px;
+    margin: 0 30px;
+}
+
+.search div{
+    margin: 0 30px;
+}
+
+
